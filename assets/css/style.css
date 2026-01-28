@@ -1,0 +1,800 @@
+/* ////////////////////////////////////////////////// */
+/* Globale */
+/* ////////////////////////////////////////////////// */
+:root {
+  --font-main: "Inter", sans-serif;
+  --font-title: "Bungee", cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+}
+/* cacher la scrollbar */
+body::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+section {
+  min-height: 100vh;
+}
+/* ////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////// */
+
+/* ////////////////////////////////////////////////// */
+/* Section Accueil */
+/* ////////////////////////////////////////////////// */
+.accueil {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Vidéo de fond */
+.background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+}
+
+/* Overlay */
+.overlay {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.dark-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.3);
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Logo + Slogan */
+.logo_Street-Art {
+  width: 200px;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  transition: transform 1s ease;
+  z-index: 2;
+}
+
+.accueil.is-immersive .logo_Street-Art {
+  transform: scale(5);
+}
+.accueil.is-immersive .dark-overlay {
+  opacity: 1;
+}
+
+.slogan {
+  color: white;
+  font-size: 2rem;
+  font-family: var(--font-title);
+}
+
+/* Bouton son - vidéo */
+.btn-sound {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Flèche de Scrolling */
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  color: black;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+/* ////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////// */
+
+/* ////////////////////////////////////////////////// */
+/* Section Histoire */
+/* ////////////////////////////////////////////////// */
+.histoire {
+  position: relative;
+  min-height: 100vh;
+  background-image: url("../img/texture-brique.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.histoire::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 0;
+}
+
+.histoire-content {
+  position: relative;
+  padding: 10vh 10vw;
+  color: #000000;
+}
+
+.titreH2 {
+  font-family: var(--font-title), cursive;
+  font-size: 5rem;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.titreH3 {
+  font-family: var(--font-title), cursive;
+  font-size: 2rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* Textes */
+.text {
+  max-width: 600px;
+  margin-bottom: 6rem;
+  line-height: 1.6;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.text-center-right {
+  margin-left: auto;
+}
+
+.text-center-left {
+  margin-right: auto;
+}
+
+.text-center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Bouton Techniques - Orange */
+.btn-techniques {
+  display: block;
+  margin: 0 auto 2rem;
+
+  background-color: #ff8400;
+  border: 2px solid #000000;
+  color: #000;
+  border-radius: 5px;
+  padding: 20px 50px;
+
+  font-weight: 600;
+  font-size: 22px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.btn-techniques:hover {
+  background-color: #d1bba5;
+  transform: scale(1.05);
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Logos centrés afin d'accèder aux catégories */
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.categories img {
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.categories img:hover {
+  transform: scale(1.1);
+}
+/* ////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////// */
+
+/* ////////////////////////////////////////////////// */
+/* Parcours 1 : La Ville comme Toile */
+/* ////////////////////////////////////////////////// */
+.logo_villeToileAccueil {
+  overflow: hidden;
+}
+
+.section-galerie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.text-section1-p1 {
+  max-width: 1200px;
+  margin-bottom: 2rem;
+  margin-left: 7rem;
+  line-height: 1.6;
+  font-size: 30px;
+}
+
+.galerie_map {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100vh;
+  padding-top: 4rem;
+}
+
+.card {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: #e6e6e6;
+  padding: 1rem;
+  border: 3px solid #000;
+  height: 350px;
+  transition: transform 0.3s ease;
+  color: #000000;
+  margin: 0 auto;
+  font-size: 26px;
+}
+
+.card img {
+  height: 250px;
+}
+
+.text-galerie_map {
+  text-transform: uppercase;
+  font-family: var(--font-title);
+}
+
+/* Colonne gauche */
+.card:nth-child(3n + 1) {
+  transform: translateY(20px);
+}
+
+/* Colonne droite */
+.card:nth-child(3n) {
+  transform: translateY(20px);
+}
+
+@media (max-width: 900px) {
+  .card {
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    transform: none !important;
+  }
+}
+
+/* ////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////// */
+
+/* ////////////////////////////////////////////////// */
+/* Parcours 2 : Vandalisme ou Art */
+/* ////////////////////////////////////////////////// */
+.parcours2_section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+.parcours2_fond_clair {
+  background-image: url("../img/fond_clair_p3.png");
+}
+
+.parcours2-fond-sombre {
+  color: #ffffff;
+  background:
+    linear-gradient(rgba(55, 55, 55, 0.8), rgba(55, 55, 55, 0.8)),
+    url("../img/fond_sombre_p2.png");
+}
+
+/* Logo du parcours */
+.logo_vandalismeArt {
+  width: 800px;
+}
+
+.div_centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.div_column {
+  display: flex;
+  flex-direction: column;
+}
+
+.div_row {
+  display: flex;
+  flex-direction: row;
+}
+.div_centered img {
+  width: 75%;
+  height: 90vh;
+}
+
+.bg-full {
+  background-color: #000000;
+  background-image: url("../img/stopSignStreetArt-p2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.img_nuit-p2 {
+  z-index: 2;
+}
+
+.text-nuit-p2 {
+  position: relative;
+  font-size: 36px;
+  text-align: left;
+  z-index: 2;
+  margin-right: 0;
+}
+
+.img_berlin1-p2 {
+  width: 100%;
+  z-index: 2;
+}
+.img_berlin2-p2 {
+  width: 100%;
+  z-index: 2;
+}
+.img_toronto-p2 {
+  width: 60%;
+  max-height: 70vh;
+  z-index: 2;
+}
+
+.p2-section2-row {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.p2-section3-row {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.p2-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.titreH3-section2-p2 {
+  margin-top: 3rem;
+}
+
+.text-section3-p2 {
+  text-align: center;
+  margin-top: 2vh;
+  font-size: 30px;
+}
+
+.text-section4-p2 {
+  text-align: center;
+  margin-top: 1vh;
+  font-size: 30px;
+  max-width: 1000px;
+  margin-bottom: 0;
+}
+
+/* ////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////// */
+
+/* ////////////////////////////////////////////////// */
+/* Parcours 3 : Les Murs ont la Parole */
+/* ////////////////////////////////////////////////// */
+.parcours3_section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../img/fond_clair_p3.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.background-grey {
+  color: #ffffff;
+  background:
+    linear-gradient(rgba(55, 55, 55, 0.7), rgba(55, 55, 55, 0.7)),
+    url("../img/fond_clair_p3.png");
+}
+
+/* Contenu centré : logo / graffeur / scroll */
+.overlay-p3 {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+/* Logo du parcours */
+.logo_lesMursOLP {
+  width: 500px;
+}
+
+/* Graffeur */
+.logo_lesMursOLP.graffeur {
+  width: 550px;
+  position: absolute;
+  top: 50%;
+  left: 55%;
+
+  transform: translate(-25%, -40%);
+}
+
+@media (max-width: 768px) {
+  .logo_lesMursOLP {
+    width: 250px;
+  }
+  .logo_lesMursOLP.graffeur {
+    left: 60%;
+    width: 40vw;
+  }
+}
+
+.titreH2-section1-p3 {
+  font-family: var(--font-title);
+  font-size: 5rem;
+  margin-bottom: 4rem;
+  margin-left: 7rem;
+  padding-top: 5rem;
+}
+.text-section1-p3 {
+  max-width: 1200px;
+  margin-bottom: 6rem;
+  margin-left: 7rem;
+  line-height: 1.6;
+  font-size: 30px;
+}
+.full-maj {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: var(--font-title);
+  margin-left: 7rem;
+}
+
+.titreH3-section2-p3 {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  margin-bottom: 4rem;
+  margin-left: 7rem;
+  padding-top: 5rem;
+  width: 500px;
+}
+.text-section2-p3 {
+  max-width: 800px;
+  margin-bottom: 6rem;
+  margin-left: 7rem;
+  line-height: 1.6;
+  font-size: 30px;
+}
+.text-section2-p3_grey {
+  color: #2c2c2c;
+  font-weight: 600;
+}
+
+.img_paoloPortrait {
+  position: absolute;
+  top: 20vh;
+  right: 8vw;
+  border: #000000 5px solid;
+  z-index: 2;
+}
+.img_paoloOeuvre {
+  position: absolute;
+  bottom: 5vh;
+  right: 12vw;
+  border: #000000 5px solid;
+  z-index: 1;
+}
+
+.text-section3-p3 {
+  max-width: 1000px;
+  margin-bottom: 6rem;
+  margin-left: 7rem;
+  line-height: 1.6;
+  font-size: 28px;
+}
+.text-section3-p3_white {
+  padding-top: 5rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.img_banksyOeuvre1 {
+  position: absolute;
+  top: 15vh;
+  right: 10vw;
+  border: #000000 5px solid;
+  z-index: 2;
+}
+.img_banksyOeuvre2 {
+  position: absolute;
+  bottom: 3vh;
+  right: 20vw;
+  border: #000000 5px solid;
+  z-index: 1;
+}
+
+.text-section4-p3 {
+  max-width: 700px;
+  margin-bottom: 6rem;
+  margin-left: 7rem;
+  line-height: 1.6;
+  font-size: 28px;
+}
+
+.text-section4-p3_grey {
+  padding-top: 5rem;
+  color: #2c2c2c;
+  font-weight: 600;
+}
+
+.img_missTicOeuvre1 {
+  position: absolute;
+  bottom: 45vh;
+  right: 33vw;
+  border: #000000 5px solid;
+  z-index: 2;
+}
+.img_missTicOeuvre2 {
+  position: absolute;
+  bottom: 43vh;
+  right: 19vw;
+  border: #000000 5px solid;
+  z-index: 2;
+}
+.img_missTicOeuvre3 {
+  position: absolute;
+  bottom: 15vh;
+  right: 18vw;
+  border: #000000 5px solid;
+  z-index: 1;
+}
+
+.img_finp3Oeuvre1 {
+  position: absolute;
+  border: #000000 5px solid;
+  bottom: 41vh;
+  left: 12vw;
+  z-index: 5;
+}
+.img_finp3Oeuvre2 {
+  position: absolute;
+  border: #000000 5px solid;
+  bottom: 43vh;
+  left: 37vw;
+  z-index: 3;
+}
+.img_finp3Oeuvre3 {
+  position: absolute;
+  border: #000000 5px solid;
+  bottom: 16vh;
+  right: 18vw;
+  z-index: 1;
+}
+.img_finp3Oeuvre4 {
+  position: absolute;
+  border: #000000 5px solid;
+  bottom: 16vh;
+  left: 10vw;
+  z-index: 2;
+}
+.img_finp3Oeuvre5 {
+  position: absolute;
+  border: #000000 5px solid;
+  bottom: 14vh;
+  left: 33vw;
+  z-index: 4;
+}
+
+.titreH3-section5-p3 {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  margin-bottom: 4rem;
+  margin-left: 7rem;
+  padding-top: 4rem;
+  text-align: center;
+}
+
+.titreH3-section5-bas-p3 {
+  padding-top: 72vh;
+  z-index: 10;
+}
+/* ////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////// */
+
+/* ////////////////////////////////////////////////// */
+/* Les Techniques */
+/* ////////////////////////////////////////////////// */
+.parcoursTech_section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.techniques {
+  position: relative;
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(211, 211, 211, 0.7), rgba(126, 126, 126, 0.7)),
+    url("../img/texture-brique.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.titreH2-section1-tech {
+  font-family: var(--font-title);
+  font-size: 5rem;
+  margin-bottom: 4rem;
+  margin-left: 7rem;
+  padding-top: 2rem;
+}
+
+.text-section1-tech_left {
+  max-width: 800px;
+  margin-bottom: 3rem;
+  margin-left: 7rem;
+  line-height: 1.6;
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.text-section1-tech_right {
+  max-width: 800px;
+  margin-bottom: 3rem;
+  margin-right: 7rem;
+  margin-left: auto;
+  line-height: 1.6;
+  font-size: 26px;
+  font-weight: 500;
+  text-align: right;
+}
+.title-section1-tech_right,
+.title-section1-tech_left {
+  max-width: none;
+  padding-top: 10vh;
+}
+
+.banksyPochoir-tech {
+  position: absolute;
+  top: 15vh;
+  right: 15vw;
+  width: 25%;
+  border: #000000 5px solid;
+}
+.missTicPochoir-tech {
+  position: absolute;
+  bottom: 5vh;
+  right: 15vw;
+  width: 25%;
+  border: #000000 5px solid;
+}
+
+.invader-tech {
+  position: absolute;
+  bottom: 5vh;
+  left: 15vw;
+  width: 50%;
+  max-width: 800px;
+  border: #000000 5px solid;
+}
+
+.tracyGraff-tech {
+  position: absolute;
+  bottom: 5vh;
+  left: 15vw;
+  width: 40%;
+  max-width: 700px;
+  border: #000000 5px solid;
+}
+
+.seenGraff-tech {
+  position: absolute;
+  bottom: 25vh;
+  right: 10vw;
+  width: 30%;
+  max-width: 600px;
+  border: #000000 5px solid;
+}
+
+.lyonProj-tech {
+  position: absolute;
+  bottom: 5vh;
+  left: 15vw;
+  width: 100%;
+  max-width: 1200px;
+  border: #000000 5px solid;
+}
+
+.jungleStick-tech {
+  position: absolute;
+  bottom: 4vh;
+  right: 15vw;
+  width: 75%;
+  max-width: 800px;
+  border: #000000 5px solid;
+}
+
+.bancsYarn-tech {
+  position: absolute;
+  bottom: 5vh;
+  right: 13vw;
+  width: 40%;
+  max-width: 800px;
+  border: #000000 5px solid;
+}
+
+.arbreYarn-tech {
+  position: absolute;
+  bottom: 27vh;
+  left: 5vw;
+  width: 40%;
+  max-width: 800px;
+  border: #000000 5px solid;
+}
+
+.shoesDanube-tech {
+  position: absolute;
+  bottom: 5vh;
+  left: 40vw;
+  width: 50%;
+  max-width: 800px;
+  border: #000000 5px solid;
+}
+/* ////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////// */
