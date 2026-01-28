@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Street Art</title>
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="js/script.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Accueil -->
+    <section class="accueil">
+      <!-- Vidéo -->
+      <video
+        class="background-video"
+        src="assets/video/Street_Art.mov"
+        autoplay
+        loop
+        muted
+        playsinline
+      ></video>
+
+      <!-- Overlay -->
+      <div class="dark-overlay"></div>
+      <div class="overlay">
+        <img
+          src="assets/img/logo_Street-Art.png"
+          alt="Street Art"
+          class="logo_Street-Art"
+        />
+        <h1 class="slogan">DE L'ART À LA RÉVOLTE</h1>
+        <button class="btn-sound" aria-label="Activer le son">🔇</button>
+        <div class="scroll-indicator">↓</div>
+      </div>
+    </section>
+
+    <!-- Histoire -->
+    <section class="histoire">
+      <div class="histoire-content">
+        <h2 class="titreH2">.Histoire</h2>
+
+        <div class="text text-center-right">
+          <p>
+            Le Street Art, est né aux États-Unis dans les années 60. Le premier
+            mouvement s'appelle le « Graffiti writing » et voit le jour à
+            Philadelphie sous l'influence de deux graffeurs, Cornbread et Cool
+            Earl.
+          </p>
+          <br />
+          <p>
+            Le street art naît d'un besoin urgent et profond : parler,
+            revendiquer, exister. Dans les rues, sur les trains, sur les murs
+            des villes, l'artiste s'empare de l'espace public pour y inscrire
+            son histoire, son identité et sa vision du monde. La ville devient
+            alors une toile à ciel ouvert, accessible à tous.
+          </p>
+        </div>
+
+        <div class="text text-center">
+          <p>
+            Entre contestation sociale et besoin d'expression en dehors des
+            institutions artistiques traditionnelles, le street art n'a cessé
+            d'évoluer au fil des décennies. Il s'adapte aux contextes
+            politiques, sociaux et culturels, tout en conservant son caractère
+            libre et spontané.
+          </p>
+          <br />
+          <p>
+            Aujourd'hui, le street art se décline en styles très différents et
+            prend des formes variées, allant du graffiti au pochoir, de la
+            fresque monumentale aux collages urbains, témoignant de la richesse
+            et de la diversité de ce mouvement artistique.
+          </p>
+        </div>
+
+        <a href="techniques.html"
+          ><button class="btn-techniques">Techniques</button>
+        </a>
+
+        <div class="categories">
+          <img
+            src="assets/img/img_categ-ville-toile.png"
+            alt="La Ville comme Toile"
+          />
+          <img
+            src="assets/img/img_categ-vandalisme-art.png"
+            alt="Vandalisme ou Art"
+          />
+          <img
+            src="assets/img/img_categ-murs.png"
+            alt="Les murs ont la parole"
+          />
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
