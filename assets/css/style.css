@@ -227,6 +227,15 @@ a {
 /* ////////////////////////////////////////////////// */
 /* Parcours 1 : La Ville comme Toile */
 /* ////////////////////////////////////////////////// */
+.parcours1_section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 5vw;
+  background-image: url("../img/fond_clair_p3.png");
+  background-size: cover;
+  background-position: center;
+}
 .logo_villeToileAccueil {
   overflow: hidden;
 }
@@ -298,6 +307,62 @@ a {
 @media (max-width: 768px) {
   .card {
     transform: none !important;
+  }
+}
+.titreH3-p1 {
+  font-family: var(--font-title);
+  font-size: 3rem;
+  margin-bottom: 4rem;
+  margin-left: 7rem;
+  padding-top: 5rem;
+  width: 1200px;
+}
+
+.p3-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  padding-bottom: 2rem;
+}
+
+.p3-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.p3-text {
+  flex: 1;
+  max-width: 320px;
+  line-height: 1.6;
+}
+
+.p3-image {
+  flex: 1;
+  max-width: 350px;
+  height: auto;
+}
+
+.fresqueIntiFull {
+  margin: 0 auto;
+  width: 80%;
+  height: 70vh;
+}
+
+.p3-row.reverse {
+  flex-direction: row;
+}
+
+@media (max-width: 900px) {
+  .p3-row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .p3-text,
+  .p3-image {
+    max-width: 100%;
   }
 }
 
