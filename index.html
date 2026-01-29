@@ -16,9 +16,22 @@
     />
   </head>
 
-  <body>
+  <body class="techniques">
+    <!-- Menu de navigation -->
+    <nav class="side-menu hidden">
+      <button class="side-menu-toggle">&lt;</button>
+
+      <ul class="side-menu-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="parcours1.html">Parcours 1</a></li>
+        <li><a href="parcours2.html">Parcours 2</a></li>
+        <li><a href="parcours3.html">Parcours 3</a></li>
+        <li><a href="techniques.html">Techniques</a></li>
+      </ul>
+    </nav>
+
     <!-- Accueil -->
-    <section class="accueil">
+    <section class="accueil story-section">
       <!-- Vidéo -->
       <video
         class="background-video"
@@ -44,11 +57,15 @@
     </section>
 
     <!-- Histoire -->
-    <section class="histoire">
+    <section class="histoire story-section">
       <div class="histoire-content">
-        <h2 class="titreH2">.Histoire</h2>
+        <div class="hero-triangle">
+          <img src="assets/img/Composition_Triangle.png" alt="Artwork urbain" />
+        </div>
 
-        <div class="text text-center-right">
+        <h2 class="titreH2 zIndex1 text-align-right">.Histoire</h2>
+
+        <div class="text text-centered-right">
           <p>
             Le Street Art, est né aux États-Unis dans les années 60. Le premier
             mouvement s'appelle le « Graffiti writing » et voit le jour à
@@ -65,7 +82,7 @@
           </p>
         </div>
 
-        <div class="text text-center">
+        <div class="text text-center text-align-left">
           <p>
             Entre contestation sociale et besoin d'expression en dehors des
             institutions artistiques traditionnelles, le street art n'a cessé
